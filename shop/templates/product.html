@@ -1,0 +1,27 @@
+{% extends 'base.html' %} {% load static %}
+<br />
+{% block title %} Product {% endblock %}
+<br />
+{% block content %}
+
+<div class="container py-5">
+  <div class="row mt-5">
+    <div class="col-10 mx-auto col-md-6 my-3">
+      <img src="{{product.image.url}}" alt="" />
+    </div>
+  </div>
+</div>
+<div class="col-10 mx-auto col-md-6 my-3">
+  <div>
+    <h1 class="product_title">{{product.name}}</h1>
+    <h5 class="text-info font-italic mb-4">{{product.price}}</h5>
+    <p class="product_desc">Product product_desc</p>
+    <p class="text-justify product_text">{{product.description}}</p>
+    {% if product.stock <= 0 %}
+    <h1 class="text-justify product_text">Out of stock</h1>
+    {% else %}
+    <a href="">Add to cart</a>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}
