@@ -1,0 +1,75 @@
+{% extends 'base.html' %} {% load static %}
+<br />
+{% block title %} Cart {% endblock %}
+<br />
+{% block content %}
+<div class="text-center">
+  <br />
+  <div class="text-center product_title">Shopping cart</div>
+</div>
+<div class="row mx-auto">
+  <div class="col-12 col-sm-12 col-md-12 col-lg-6 text-center">
+    <table class="table cart-table">
+      <thead class="cart-thead">
+        <tr>
+          <th colspan="4">your items</th>
+        </tr>
+      </thead>
+      {% for i in '123' %}
+      <tr>
+        <td>
+          <a href="">
+            <img
+              src="{% static 'images/beauty.png' %}"
+              width="100"
+              height="100"
+              alt=""
+            />
+          </a>
+        </td>
+        <td class="text-left">
+          Beauty
+          <br />
+          SKU: 7
+          <br />
+          Unit price: 20
+          <br />
+          Quantity:3 x 20
+        </td>
+        <td>$60</td>
+        <td>
+          <a class="material-symbols-outlined cart-icon"> add_shopping_cart </a>
+          <a class="material-symbols-outlined cart-icon"> remove_circle </a>
+          <a class="material-symbols-outlined cart-icon"> delete </a>
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+  <div class="col-12 col-sm-12 col-md-12 col-lg-6 text-center">
+    <table class="table cart-table">
+      <thead class="cart-thead">
+        <tr>
+          <th colspan="4">check out</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Please check your cart before paymant.</td>
+        </tr>
+        <tr class="text-left">
+          <td>Your total bill is <strong>$60</strong></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="mx-auto">
+      <a href="">
+        <button class="btn btn-lg btn-blog bg-dark text-white">
+          Back to pruducts
+        </button>
+      </a>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
